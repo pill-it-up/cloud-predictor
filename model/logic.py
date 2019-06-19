@@ -5,7 +5,15 @@ from pathlib import Path
 import torch
 import json
 
-MODEL = "model1"
+import logging
+
+logging.basicConfig(
+    filename="{}".format(Path.home() / "logs" / "predictor.log"),
+    format="%(asctime)s == PILLITUP == PRED_LOGIC == [%(levelname)-8s] %(message)s",
+    level=logging.DEBUG,
+)
+
+MODEL = "model_black"
 
 config = json.load((Path(__file__).resolve().parent / "models.json").open())
 
@@ -23,6 +31,7 @@ upsample = torch.nn.Upsample((224, 224))
 
 
 def model_load():
+    logging.debug("Loading model.")
     model_ft = models.resnet18(pretrained=True)
     num_ftrs = model_ft.fc.in_features
     model_ft.fc = torch.nn.Linear(num_ftrs, N_CLASSES)
@@ -30,6 +39,7 @@ def model_load():
     saved_state = torch.load(filepath, map_location=lambda storage, loc: storage)
     model_ft.load_state_dict(saved_state)
     model_ft.eval()
+    logging.debug("Model loaded.")
     return model_ft
 
 
@@ -41,8 +51,12 @@ def preprocess_pil(img_pil):
 
 
 def predict(model_ft, img_file):
+    logging.debug("Starting prediction.")
     img_pil = Image.open(img_file)
+
+    logging.debug("Preprocessing image.")
     img_tensor = preprocess_pil(img_pil)
     fc_out = model_ft(img_tensor)
     _, indices = torch.max(fc_out, 1)
+
     return CLASSES[indices[0]]

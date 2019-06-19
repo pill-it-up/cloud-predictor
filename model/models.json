@@ -2,5 +2,10 @@
     "model1": {
         "path": "pills.model",
         "classes": ["astorvastatina", "cloridrato", "codeina", "empty", "omeprazol"]
+    },
+
+    "model_black": {
+        "path": "pills_bb.model",
+        "classes": ["astorvastatina", "cloridrato", "codeina", "empty", "omeprazol"]
     }
 }
