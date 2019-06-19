@@ -7,7 +7,7 @@ from pathlib import Path
 import logging
 
 logging.basicConfig(
-    filename="{}".format(Path(".") / "logs" / "predictor.log"),
+    filename="{}".format(Path.home() / "logs" / "predictor.log"),
     format="%(asctime)s == PILLITUP == PREDICTOR == [%(levelname)-8s] %(message)s",
     level=logging.DEBUG,
 )
