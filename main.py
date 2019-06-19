@@ -18,7 +18,7 @@ CORS(app)
 model = model_load()
 
 
-@app.route("/predict", methods=["POST"])
+@app.route("/predict", methods=["GET", "POST"])
 def prediction():
     logging.debug("Received prediction request.")
 
