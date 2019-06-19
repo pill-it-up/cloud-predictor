@@ -23,7 +23,10 @@ def prediction():
     logging.debug("Received prediction request.")
 
     img = request.files["media"]
-    predicted_pill = predict(model, img.stream)
+    img.save("image.jpg")
+
+    logging.debug("Received image {}".format(img))
+    predicted_pill = predict(model, "image.jpg")
 
     logging.debug("Found {}.".format(predicted_pill))
     return jsonify({"medication": str(predicted_pill).replace("_", " ")})

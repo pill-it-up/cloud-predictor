@@ -7,12 +7,6 @@ import json
 
 import logging
 
-logging.basicConfig(
-    filename="{}".format(Path.home() / "logs" / "predictor.log"),
-    format="%(asctime)s == PILLITUP == PRED_LOGIC == [%(levelname)-8s] %(message)s",
-    level=logging.DEBUG,
-)
-
 MODEL = "model_black"
 
 config = json.load((Path(__file__).resolve().parent / "models.json").open())
