@@ -1,0 +1,6 @@
+{
+    "model1": {
+        "path": "pills.model",
+        "classes": ["astorvastatina", "cloridrato", "codeina", "empty", "omeprazol"]
+    }
+}
