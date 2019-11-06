@@ -7,5 +7,10 @@
     "model_black": {
         "path": "pills_bb.model",
         "classes": ["astorvastatina", "cloridrato", "codeina", "empty", "omeprazol"]
+    },
+    
+    "model_8_pills": {
+        "path": "8_pill.model",
+        "classes": ["atorvastatina", "amitriptilina", "domperidona", "dipirona", "tramadol", "karvil", "codeina", "omeprazol"]
     }
 }
