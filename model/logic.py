@@ -10,7 +10,7 @@ import numpy as np
 
 import logging
 
-MODEL = "model_8_pills"
+MODEL = "model_black"
 
 config = json.load((Path(__file__).resolve().parent / "models.json").open())
 
