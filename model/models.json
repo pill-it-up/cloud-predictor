@@ -1,16 +1,35 @@
 {
     "model1": {
         "path": "pills.model",
-        "classes": ["astorvastatina", "cloridrato", "codeina", "empty", "omeprazol"]
+        "classes": [
+            "atorvastatina",
+            "cloridrato",
+            "codeina",
+            "empty",
+            "omeprazol"
+        ]
     },
-
     "model_black": {
         "path": "pills_bb.model",
-        "classes": ["astorvastatina", "cloridrato", "codeina", "empty", "omeprazol"]
+        "classes": [
+            "atorvastatina",
+            "cloridrato",
+            "codeina",
+            "empty",
+            "omeprazol"
+        ]
     },
-    
     "model_8_pills": {
         "path": "8_pill.model",
-        "classes": ["atorvastatina", "amitriptilina", "domperidona", "dipirona", "tramadol", "karvil", "codeina", "omeprazol"]
+        "classes": [
+            "atorvastatina",
+            "amitriptilina",
+            "domperidona",
+            "dipirona",
+            "tramadol",
+            "karvil",
+            "codeina",
+            "omeprazol"
+        ]
     }
 }
